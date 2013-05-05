@@ -78,6 +78,7 @@ fi
 
 # check if virtualenv is present, otherwise install it
 if [[ $(virtualenv-$PYTHON_VER_MAJOR --version) != $VIRTUALENV_VER* ]]; then
+    echo "Installing virtualenv"
     sudo pip-$PYTHON_VER_MAJOR install virtualenv==$VIRTUALENV_VER
     sudo ln -sfn /usr/local/bin/virtualenv-$PYTHON_VER_MAJOR /usr/bin/virtualenv-$PYTHON_VER_MAJOR
 else
